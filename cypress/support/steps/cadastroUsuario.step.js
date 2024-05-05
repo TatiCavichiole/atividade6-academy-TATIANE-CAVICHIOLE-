@@ -15,6 +15,6 @@ When("informar um novo email", function () {
 When("confirmar a operação", function () {
   cy.get(paginaCadastro.buttonSalvar).should("be.visible");
   paginaCadastro.clickButtonSalvar();
-  cy.get(".go3958317564").should("have.text", "Usuário salvo com sucesso!");
+  cy.get(".go3958317564").contains("have.text", "Usuário salvo com sucesso!");
 });
 Then("o usuario devera ser cadastrado", function () {});
