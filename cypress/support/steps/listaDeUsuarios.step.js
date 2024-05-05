@@ -58,3 +58,8 @@ Then("devera exibir mensagem sem usuarios", function () {
     "exist"
   );
 });
+
+Given("que existem 7 usuarios cadastrados", function () {});
+Given("que acessei a lista de usuarios", function () {});
+When("verificar os usuarios cadastrados", function () {});
+Then("devera exibir paginação 1 de 2", function () {});

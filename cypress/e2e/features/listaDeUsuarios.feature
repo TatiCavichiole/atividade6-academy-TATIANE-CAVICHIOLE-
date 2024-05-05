@@ -14,3 +14,9 @@ E que acessei a lista de usuarios
 Quando verificar a lista vazia usuarios cadastrados
 Entao deve exibir opçao para cadastrar novo usuario
 E devera exibir mensagem sem usuarios
+
+Cenario: Deve exibir paginaçao se existir mais de 6 usuarios cadastrados
+Dado que existem 7 usuarios cadastrados
+E que acessei a lista de usuarios
+Quando verificar os usuarios cadastrados
+Entao devera exibir paginação 1 de 2
