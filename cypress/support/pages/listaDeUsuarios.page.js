@@ -1,6 +1,6 @@
 export default class ListaUsuarioPage {
   paginaUsuarios = "#listaUsuarios";
-  novoUsuario = '[href = "/users/novo]';
+  novoUsuario = ".sc-bmzYkS";
   dadosEmail = '[data-test="userDataEmail"]';
   dadosNome = '[data-test="userDataName"]';
 
