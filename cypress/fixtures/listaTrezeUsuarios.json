@@ -1,0 +1,100 @@
+[
+  {
+    "id": "7ad5107c-e758-4990-8bc1-42b8b032ebfc",
+    "name": "fakerLisette",
+    "email": "iva_streich4@yahoo.com",
+    "createdAt": "2024-05-04T23:43:07.960Z",
+    "updatedAt": "2024-05-04T23:43:07.960Z"
+  },
+  {
+    "id": "c5a57a75-6c79-46e9-9b58-fad19caefccd",
+    "name": "fakerAssunta",
+    "email": "asa_kihn@yahoo.com",
+    "createdAt": "2024-05-04T23:53:29.225Z",
+    "updatedAt": "2024-05-04T23:53:29.225Z"
+  },
+  {
+    "id": "87e15066-1ac6-4ad6-9ba6-6cc842f44d31",
+    "name": "Maria Jose",
+    "email": "mariajose@example.com",
+    "createdAt": "2024-05-05T00:28:39.576Z",
+    "updatedAt": "2024-05-05T00:28:39.576Z"
+  },
+  {
+    "id": "b7e8b818-a62d-4f2c-99b3-db017b8b1f6e",
+    "name": "Internal Brand Assistant",
+    "email": "luciano67@gmail.com",
+    "createdAt": "2024-05-05T00:31:50.193Z",
+    "updatedAt": "2024-05-05T00:31:50.193Z"
+  },
+  {
+    "id": "c8331165-a03f-4e2e-a869-ee3c98c4d958",
+    "name": "Maria Jose Cardoso",
+    "email": "mariajosec@example.com",
+    "createdAt": "2024-05-05T00:36:15.417Z",
+    "updatedAt": "2024-05-05T00:36:15.417Z"
+  },
+  {
+    "id": "ba18fdfc-9e77-4cce-ba53-0a876a775366",
+    "name": "Rosemary Bednar PhD",
+    "email": "etha6@gmail.com",
+    "createdAt": "2024-05-05T00:48:32.748Z",
+    "updatedAt": "2024-05-05T00:48:32.748Z"
+  },
+  {
+    "id": "6be141f6-aa27-4fb5-ab2b-42a5e37e4eb4",
+    "name": "Glenda Hand",
+    "email": "Keith_Heller@gmail.com",
+    "createdAt": "2024-05-07T00:53:15.890Z",
+    "updatedAt": "2024-05-07T00:53:15.890Z"
+  },
+  {
+    "id": "75acc52e-8578-4582-94a6-b9fe17257962",
+    "name": "Opal Huels",
+    "email": "Jayden_Streich@yahoo.com",
+    "createdAt": "2024-05-07T00:53:31.081Z",
+    "updatedAt": "2024-05-07T00:53:31.081Z"
+  },
+  {
+    "id": "e12ad037-ece6-4c7e-8326-26282538c798",
+    "name": "GMsZbwiiFfynCwcXzpBGThTKEOlPPkqJPplLjEcLHUrHjKWhmPiGXvvIpSblfNNReDzuqlEMKnIEmbZEOwWaQgjssEKRqayhFGSv",
+    "email": "may45@gmail.com",
+    "createdAt": "2024-05-07T00:53:34.977Z",
+    "updatedAt": "2024-05-07T00:53:34.977Z"
+  },
+  {
+    "id": "8ba21e81-3bfa-4d01-ac27-19e951f0624d",
+    "name": "Jenny Gusikowski",
+    "email": "alverta.kertzmann0@hotmail.com",
+    "createdAt": "2024-05-07T00:53:35.458Z",
+    "updatedAt": "2024-05-07T00:53:35.458Z"
+  },
+  {
+    "id": "17805436-7271-4210-a14c-6cecece70a8d",
+    "name": "Luke Skywalker",
+    "email": "judy_marvin74@hotmail.com",
+    "createdAt": "2024-05-07T00:53:44.219Z",
+    "updatedAt": "2024-05-07T00:53:44.219Z"
+  },
+  {
+    "id": "3962477c-52d7-41db-9df9-a3f991cbf570",
+    "name": "Rachael Rice",
+    "email": "verla60@gmail.com",
+    "createdAt": "2024-05-07T00:53:45.371Z",
+    "updatedAt": "2024-05-07T00:53:45.371Z"
+  },
+  {
+    "id": "23860a0d-4aaa-42ce-8d46-f9f0370de5cb",
+    "name": "Fábio Saraiva",
+    "email": "Nedra85@hotmail.com",
+    "createdAt": "2024-05-07T00:53:49.823Z",
+    "updatedAt": "2024-05-07T00:53:49.823Z"
+  },
+  {
+    "id": "73bd081a-3209-4bf9-91bb-338a8128f904",
+    "name": "oDesKGtVZocvWPayFhcbCYDTKzStgdtZUZlVCGARYzNHvePjaklUtzetDoJFdhnRzZoVJSswPkFRmwpHJugZSJvQpucXoCuYtPkt",
+    "email": "adeline_lemke9@gmail.com",
+    "createdAt": "2024-05-07T00:54:38.391Z",
+    "updatedAt": "2024-05-07T00:54:38.391Z"
+  }
+]

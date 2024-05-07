@@ -1,24 +1,31 @@
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 import ListaUsuarioPage from "../pages/listaDeUsuarios.page";
 
 var paginaListaUsario = new ListaUsuarioPage();
 let listaUsuarios;
-Given("que existem um ou mais usuarios cadastrados", function () {
-  cy.visit("");
-
-  cy.intercept("GET", "/api/v1/users", {
-    statusCode: 200,
-    fixture: "listaSeisUsuarios.json",
-  }).as("getUsers");
-  cy.wait("@getUsers").then(function (consultaDeUsuarios) {
-    listaUsuarios = consultaDeUsuarios.response.body;
-  });
-});
-
 Given("que acessei a lista de usuarios", function () {
-  cy.visit("/users");
+  cy.visit("");
 });
+Given(
+  "que existem {int} usuários cadastrados no sistema",
+  function (numUsuarios) {
+    let nomeFixture;
+    if (numUsuarios <= 6) {
+      nomeFixture = "listaSeisUsuarios.json";
+    } else if (numUsuarios > 6) {
+      nomeFixture = "listaTrezeUsuarios.json";
+    }
+
+    cy.intercept("GET", "/api/v1/users", {
+      statusCode: 200,
+      fixture: nomeFixture,
+    }).as("getUsers");
+    cy.wait("@getUsers").then(function (consultaDeUsuarios) {
+      listaUsuarios = consultaDeUsuarios.response.body;
+    });
+  }
+);
 
 When("verificar os usuarios cadastrados", function () {
   cy.get(paginaListaUsario.paginaUsuarios).should("be.visible");
@@ -44,7 +51,7 @@ Given("que nao existam usuarios cadastrados", function () {
     body: [],
   }).as("listaVazia");
 });
-Given("que acessei a lista de usuarios", function () {});
+//Given("que acessei a lista de usuarios", function () {});
 
 When("verificar a lista vazia usuarios cadastrados", function () {
   cy.wait("@listaVazia");
@@ -58,8 +65,20 @@ Then("devera exibir mensagem sem usuarios", function () {
     "exist"
   );
 });
+Then(
+  "a indicação de página correta deve ser mostrada como Página {int} de {int}",
+  function () {
+    cy.get(paginaListaUsario.paginacaoAtual)
+      .contains("1 de 3")
+      .and("be.visible");
+  }
+);
+When("clicar na opção {string} na paginação", function () {});
+Then("a paginação deverá ser atualizada para a próxima página", function () {});
 
-Given("que existem 7 usuarios cadastrados", function () {});
-Given("que acessei a lista de usuarios", function () {});
-When("verificar os usuarios cadastrados", function () {});
-Then("devera exibir paginação 1 de 2", function () {});
+Then("o botao nao devera estar habilitado", function () {});
+
+Then(
+  "a paginação deverá ser atualizada para a pagina anterior",
+  function () {}
+);

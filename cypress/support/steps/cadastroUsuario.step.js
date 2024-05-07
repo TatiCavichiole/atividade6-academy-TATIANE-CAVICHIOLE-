@@ -18,3 +18,5 @@ When("confirmar a operação", function () {
   cy.get(".go3958317564").contains("have.text", "Usuário salvo com sucesso!");
 });
 Then("o usuario devera ser cadastrado", function () {});
+
+//const nome = faker.person.fullName().replace('-');
