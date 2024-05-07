@@ -23,6 +23,6 @@ export default class ListaUsuarioPage {
   }
 
   getComponenteTodosUsuarios() {
-    return cy.get(this.componenteTodosUsuarios);
+    return cy.get(this.todosUsuarios);
   }
 }

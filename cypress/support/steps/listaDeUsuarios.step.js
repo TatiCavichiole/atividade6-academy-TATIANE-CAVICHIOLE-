@@ -4,16 +4,18 @@ import ListaUsuarioPage from "../pages/listaDeUsuarios.page";
 
 var paginaListaUsario = new ListaUsuarioPage();
 let listaUsuarios;
+let numUsuarios;
 Given("que acessei a lista de usuarios", function () {
   cy.visit("");
 });
 Given(
   "que existem {int} usuários cadastrados no sistema",
-  function (numUsuarios) {
+  function (quantidade) {
+    numUsuarios = quantidade;
     let nomeFixture;
-    if (numUsuarios <= 6) {
+    if (quantidade <= 6) {
       nomeFixture = "listaSeisUsuarios.json";
-    } else if (numUsuarios > 6) {
+    } else if (quantidade > 6) {
       nomeFixture = "listaTrezeUsuarios.json";
     }
 
@@ -23,6 +25,8 @@ Given(
     }).as("getUsers");
     cy.wait("@getUsers").then(function (consultaDeUsuarios) {
       listaUsuarios = consultaDeUsuarios.response.body;
+      quantUsuarios = consultaDeUsuarios.response.body.length;
+      cy.wrap(quantUsuarios).as("quantUsuarios");
     });
   }
 );
@@ -51,7 +55,6 @@ Given("que nao existam usuarios cadastrados", function () {
     body: [],
   }).as("listaVazia");
 });
-//Given("que acessei a lista de usuarios", function () {});
 
 When("verificar a lista vazia usuarios cadastrados", function () {
   cy.wait("@listaVazia");
@@ -73,12 +76,45 @@ Then(
       .and("be.visible");
   }
 );
-When("clicar na opção {string} na paginação", function () {});
-Then("a paginação deverá ser atualizada para a próxima página", function () {});
+When("clicar na opção Próximo na paginação", function () {
+  cy.get("@quantUsuarios").then(function (quantidadePaginas) {
+    quantidadePaginas = Math.floor(quantUsuarios / 6);
+    if (quantidadePaginas < 1) {
+      for (var i = 0; i < quantidadePaginas; i++) {
+        paginaListaUsario.clickButtonProximaPagina();
+      }
+    }
+  });
+});
+
+When("clicar na opção Anterior na paginação", function () {
+  cy.get("@quantUsuarios").then((quantidadePaginas) => {
+    quantidadePaginas = Math.floor(quantUsuarios / 6);
+    if (quantidadePaginas < 1) {
+      for (var i = 0; i < quantidadePaginas; i++) {
+        paginaListaUsario.clickButtonVoltarPagina();
+      }
+    }
+  });
+});
+Then(
+  "a indicação de página deverá ser corretamente exibida",
+  function (tabela) {
+    const exemplo = tabela.rowsHash();
+    paginaListaUsario.getComponenteTodosUsuarios(exemplo["Paginação"]);
+    if (numUsuarios <= 6) {
+      cy.get(paginaListaUsario.buttonProximaPagina).should("be.disabled");
+      cy.get(paginaListaUsario.buttonVoltarPagina).should("be.disabled");
+    } else {
+      cy.get(paginaListaUsario.buttonProximaPagina).should("be.enabled");
+      cy.get(paginaListaUsario.buttonVoltarPagina).should("be.enabled");
+    }
+  }
+);
 
 Then("o botao nao devera estar habilitado", function () {});
 
-Then(
-  "a paginação deverá ser atualizada para a pagina anterior",
-  function () {}
-);
+// Then("devera exibir botao de excluir", function () {
+//   cy.get(paginaListaUsario.todosUsuarios).find(paginaListaUsuario.buttonDeletarUsuario)
+//   .should('be.visible');
+// });

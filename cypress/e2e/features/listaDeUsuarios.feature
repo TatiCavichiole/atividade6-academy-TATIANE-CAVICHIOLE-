@@ -22,27 +22,24 @@ Então a indicação de página correta deve ser mostrada como Página 1 de 3
 
 Cenario: Deve ser possivel avançar a pagina de lista de usuarios
 E que existem 13 usuários cadastrados no sistema
-Quando  clicar na opção "Próximo" na paginação
-Então a paginação deverá ser atualizada para a próxima página
-E a indicação de página deverá ser corretamente exibida
+Quando  clicar na opção Próximo na paginação
+Então a indicação de página deverá ser corretamente exibida
 Exemplos:
- | Paginação |
- |"1 de 3"   |
- |"2 de 3"   |
- |"3 de 3"   |
+ | Paginação |"1 de 3"|"2 de 3"|"3 de 3"|
+ 
+
 
 Cenario: Nao deve ser possivel avançar para proxima pagina caso nao tenham usuários para serem exibidos nela
 E que existem 6 usuários cadastrados no sistema
-Quando  clicar na opção "Próximo" na paginação
+Quando  clicar na opção Próximo na paginação
 Então o botao nao devera estar habilitado
-E a indicação de página deverá ser corretamente exibida
+
 
 Cenario: Deve ser possivel voltar a pagina de lista de usuarios
 E que existem 13 usuários cadastrados no sistema
+Quando  clicar na opção Anterior na paginação
+Então a indicação de página deverá ser corretamente exibida
 
-Quando  clicar na opção "Anterior" na paginação
-Então a paginação deverá ser atualizada para a pagina anterior
-E a indicação de página deverá ser corretamente exibida
 Exemplos:
  | Paginação |
  |"1 de 3"   |
