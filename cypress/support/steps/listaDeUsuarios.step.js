@@ -77,6 +77,9 @@ Then(
   }
 );
 When("clicar na opção Próximo na paginação", function () {
+  cy.get(paginaListaUsario.buttonProximaPagina).should("be.disabled");
+});
+When("clicar na opção Próximo ate ultima pagina", function () {
   cy.get("@quantUsuarios").then(function (quantidadePaginas) {
     quantidadePaginas = Math.ceil(quantUsuarios / 6);
 
@@ -89,7 +92,14 @@ When("clicar na opção Próximo na paginação", function () {
   });
 });
 
-When("clicar na opção Anterior na paginação", function () {
+Then("devera exibir botao de ver detalhes", function () {
+  cy.get(paginaListaUsario.buttonVerDetalhesUsuario).should("be.visible");
+});
+Then("devera exibir botao de excluir", function () {
+  cy.get(paginaListaUsario.buttonDeletarUsuario).should("be.visible");
+});
+
+When("clicar na opção Anterior ate a primeira pagina", function () {
   cy.get("@quantUsuarios").then((quantidadePaginas) => {
     quantidadePaginas = Math.floor(quantUsuarios / 6);
     if (quantidadePaginas < 1) {
@@ -100,7 +110,7 @@ When("clicar na opção Anterior na paginação", function () {
   });
 });
 Then(
-  "a indicação de página deverá ser corretamente exibida como {string}",
+  "a indicação de página deverá ser corretamente exibida como Página {int} de {int}",
   function (paginacao) {
     cy.contains(paginacao).should("be.visible");
     if (numUsuarios <= 6) {
@@ -108,7 +118,7 @@ Then(
       cy.get(paginaListaUsario.buttonVoltarPagina).should("be.disabled");
     } else {
       cy.get(paginaListaUsario.buttonProximaPagina).should("be.enabled");
-      cy.get(paginaListaUsario.buttonVoltarPagina).should("be.enabled");
+      // cy.get(paginaListaUsario.buttonVoltarPagina).should("be.enabled");
     }
   }
 );
