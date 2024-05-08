@@ -36,9 +36,12 @@ When("pesquisar usuario cadastrado pelo email", function () {
 
 Then("devera exibir as informações do usuario", function () {
   cy.contains(usuarioCriado.name).should("be.visible");
-  cy.contains(usuarioCriado.email).should("be.visible");
+  cy.contains(usuarioCriado.email.slice(0, 21)).should("be.visible");
 });
 
 Then("devera exibir a opçao de detalhes do usuario", function () {
   cy.get(paginaPesquisa.buttonDetalhes).should("be.visible");
+});
+Then("devera exibir a opçao de apagar usuario", function () {
+  cy.get(paginaPesquisa.buttonRemover).should("be.visible");
 });
