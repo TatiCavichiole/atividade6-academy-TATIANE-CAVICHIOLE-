@@ -78,7 +78,9 @@ Then(
 );
 When("clicar na opção Próximo na paginação", function () {
   cy.get("@quantUsuarios").then(function (quantidadePaginas) {
-    quantidadePaginas = Math.floor(quantUsuarios / 6);
+    quantidadePaginas = Math.ceil(quantUsuarios / 6);
+
+    cy.log(quantidadePaginas);
     if (quantidadePaginas < 1) {
       for (var i = 0; i < quantidadePaginas; i++) {
         paginaListaUsario.clickButtonProximaPagina();
@@ -98,10 +100,9 @@ When("clicar na opção Anterior na paginação", function () {
   });
 });
 Then(
-  "a indicação de página deverá ser corretamente exibida",
-  function (tabela) {
-    const exemplo = tabela.rowsHash();
-    paginaListaUsario.getComponenteTodosUsuarios(exemplo["Paginação"]);
+  "a indicação de página deverá ser corretamente exibida como {string}",
+  function (paginacao) {
+    cy.contains(paginacao).should("be.visible");
     if (numUsuarios <= 6) {
       cy.get(paginaListaUsario.buttonProximaPagina).should("be.disabled");
       cy.get(paginaListaUsario.buttonVoltarPagina).should("be.disabled");

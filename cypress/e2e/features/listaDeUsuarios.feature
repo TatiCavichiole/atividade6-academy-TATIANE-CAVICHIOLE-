@@ -20,14 +20,15 @@ E que existem 13 usuários cadastrados no sistema
 Quando verificar os usuarios cadastrados
 Então a indicação de página correta deve ser mostrada como Página 1 de 3
 
-Cenario: Deve ser possivel avançar a pagina de lista de usuarios
+Esquema do Cenario: Deve ser possivel avançar a pagina de lista de usuarios
 E que existem 13 usuários cadastrados no sistema
 Quando  clicar na opção Próximo na paginação
-Então a indicação de página deverá ser corretamente exibida
+Então a indicação de página deverá ser corretamente exibida como "<Paginacao>"
 Exemplos:
- | Paginação |"1 de 3"|"2 de 3"|"3 de 3"|
- 
-
+ |Usuarios| Paginacao |
+ |  6     | 1 de 3  |
+ |  7     | 1 de 2  |
+ |  13    | 1 de 3  |
 
 Cenario: Nao deve ser possivel avançar para proxima pagina caso nao tenham usuários para serem exibidos nela
 E que existem 6 usuários cadastrados no sistema

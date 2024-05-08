@@ -15,8 +15,11 @@ When("informar um novo email", function () {
 When("confirmar a operação", function () {
   cy.get(paginaCadastro.buttonSalvar).should("be.visible");
   paginaCadastro.clickButtonSalvar();
-  cy.get(".go3958317564").contains("have.text", "Usuário salvo com sucesso!");
 });
-Then("o usuario devera ser cadastrado", function () {});
+Then("o usuario devera ser cadastrado", function () {
+  cy.get(".go3958317564")
+    .should("be.visible")
+    .and("have.text", "Usuário salvo com sucesso!");
+});
 
 //const nome = faker.person.fullName().replace('-');
