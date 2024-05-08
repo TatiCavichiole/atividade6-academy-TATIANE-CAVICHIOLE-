@@ -3,15 +3,19 @@ export default class cadastroPage {
   inputNome = ".sc-dLMFU.Mcjyi.nameInput";
   inputEmail = "#email";
   buttonSalvar = ".sc-dAlyuH.jdAtLn";
+  mensagemErro = ".sc-cPiKLX";
 
+  getNovo() {
+    cy.get(this.linkPaginaNovo).click();
+  }
   clickNovo() {
     cy.get(this.novoCadastro).click();
   }
-  typeNome() {
-    cy.get(this.inputNome).type("testeCucumber");
+  typeNome(nome) {
+    cy.get(this.inputNome).type(nome);
   }
-  typeEmail() {
-    cy.get(this.inputEmail).type("teste2@cucumber.com");
+  typeEmail(email) {
+    cy.get(this.inputEmail).type(email);
   }
   clickButtonSalvar() {
     cy.get(this.buttonSalvar).click();

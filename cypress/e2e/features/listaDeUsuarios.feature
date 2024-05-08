@@ -1,10 +1,10 @@
 #language:pt
 
 Funcionalidade: Lista de usuarios
-Contexto: 
+Contexto: estar na pagina de lista de usuarios
 Dado que acessei a lista de usuarios
 
-Cenário: Listar usuarios Cadastrados
+Cenário: Deve ser possivel listar usuarios Cadastrados
 E que existem 6 usuários cadastrados no sistema
 Quando verificar os usuarios cadastrados
 Entao devera exibir uma lista de usuarios cadastrados com as informaçoes do usuario

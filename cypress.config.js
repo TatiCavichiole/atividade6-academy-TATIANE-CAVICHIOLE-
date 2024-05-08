@@ -9,7 +9,7 @@ const {
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://rarocrud-frontend-88984f6e4454.herokuapp.com/",
+    baseUrl: "https://rarocrud-frontend-88984f6e4454.herokuapp.com",
     specPattern: "**/*.feature",
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
